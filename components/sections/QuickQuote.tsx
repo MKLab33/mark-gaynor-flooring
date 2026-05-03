@@ -80,7 +80,7 @@ export default function QuickQuote() {
     setLoading(true)
     setError('')
     try {
-      const { error: sbError } = await getSupabase().from('bookings').insert({
+      const { error: sbError } = await getSupabase().from('flooring_bookings').insert({
         floor_type: form.floorType,
         service_type: form.serviceType,
         area_sqm: form.areaSqm,
