@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-base: #0A0807;
+  --color-bg-card: #14110D;
+  --color-accent: #C8842A;
+  --color-accent-hover: #b3741f;
+  --color-text-primary: #FFFFFF;
+  --color-text-muted: #A0A0A0;
+  --color-border: rgba(255,255,255,0.06);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0807;
+  color: #FFFFFF;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Wood-grain texture (very subtle) */
+.wood-grain {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 28px,
+      rgba(200,132,42,0.020) 28px,
+      rgba(200,132,42,0.020) 30px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 220px,
+      rgba(200,132,42,0.015) 220px,
+      rgba(200,132,42,0.015) 222px
+    );
+}
+
+/* Plank-edge texture for subtle parquet feel */
+.parquet-bg {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 38px,
+      rgba(255,255,255,0.018) 38px,
+      rgba(255,255,255,0.018) 39px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 38px,
+      rgba(255,255,255,0.018) 38px,
+      rgba(255,255,255,0.018) 39px
+    );
+}
+
+/* Glass card with warm tint */
+.glass-card {
+  background: rgba(20, 17, 13, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Amber glow utility */
+.amber-glow {
+  box-shadow: 0 0 28px rgba(200, 132, 42, 0.28);
+}
+
+/* Infinite marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+/* Slow drift for ambient light */
+@keyframes drift {
+  0%   { transform: translate3d(-2%, -1%, 0); }
+  50%  { transform: translate3d(2%, 1%, 0); }
+  100% { transform: translate3d(-2%, -1%, 0); }
+}
+
+.drift-slow {
+  animation: drift 14s ease-in-out infinite;
+}
